@@ -2,7 +2,7 @@ import  os
 import csv
 
 # input
-file_path = r'C:\Users\mpena\Documents\git\challenges\mod3_python-challenge\python-challenge\PyBank\Resources\budget_data.csv'
+file_path = os.path.join("PyBank","Resources", "budget_data.csv" )
 
 with open(file_path) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -67,12 +67,9 @@ output = (                                                          # Begin outp
     f'Greatest Increase in Profits: {largest_net_inc_mo};  ${largest_net_inc}\n'
     f'Greatest Decrease in Profits: {largest_net_dec_mo};  ${largest_net_dec}\n')
         
-
 print(output)                                                       # Output to text file
-# #output
-# output_path = r'\Analysis\Results_PyBank.txt'
-output_path = r'C:\Users\mpena\Documents\git\challenges\mod3_python-challenge\python-challenge\PyBank\Analysis\Results_PyBank.txt'
-# output_path = os.path.join("Analysis","Results_PyBank.txt")
+
+output_path = os.path.join("PyBank","Analysis","Results_PyBank.txt")
 with open(output_path, "w") as txt_file:
     txt_file.write(output)
 
